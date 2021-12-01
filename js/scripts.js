@@ -1,10 +1,11 @@
-$('.slider-cont').slick({
+$('.slider').slick({
     infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    fade: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    fade: false,
     arrows: false,
-    autoplay: true,
+    dots:true,
+    autoplay: false,
     autoplaySpeed: 4000,
     pauseOnHover:false
 });
