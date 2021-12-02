@@ -1,6 +1,6 @@
 h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   color: initial;
   margin: 0;
   font-weight: 500;
@@ -148,7 +148,7 @@ img {
 }
 
 body {
-  margin: 147px 0 0 0;
+  margin: 146px 0 0 0;
 }
 
 .nav {
@@ -162,6 +162,8 @@ body {
 .nav .top {
   background-color: #00355E;
   padding: 15px;
+  z-index: 1;
+  position: relative;
 }
 
 @media screen and (max-width: 1200px) {
@@ -183,6 +185,15 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 580px) {
+  .nav .top .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
 }
 
 .nav .top .container .info {
@@ -207,6 +218,12 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .nav .top .container .info {
+    display: none;
   }
 }
 
@@ -268,17 +285,29 @@ body {
 }
 
 .nav .bottom .container .left {
-  width: 50%;
+  width: 61.11111%;
+}
+
+@media screen and (max-width: 850px) {
+  .nav .bottom .container .left {
+    width: 55.55556%;
+  }
 }
 
 .nav .bottom .container .right {
-  width: 50%;
+  width: 38.88889%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 850px) {
+  .nav .bottom .container .right {
+    width: 44.44444%;
+  }
 }
 
 .nav .bottom .container .right p {
@@ -470,14 +499,32 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 88.88889%;
+}
+
+@media screen and (max-width: 850px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .contact h1 {
   margin-bottom: 15px;
+  color: #333;
 }
 
 .contact .left {
   width: 50%;
+}
+
+@media screen and (max-width: 850px) {
+  .contact .left {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 
 .contact .left input {
@@ -507,6 +554,18 @@ body {
           flex-direction: column;
 }
 
+@media screen and (max-width: 850px) {
+  .contact .right {
+    width: 100%;
+  }
+}
+
+.contact .right.contact-style {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
 .contact .right .container .info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -530,8 +589,27 @@ body {
   margin-bottom: 15px;
 }
 
+.contact .right .container.extrainfo {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.contact .right .container.extrainfo p {
+  text-align: center;
+  max-width: 250px;
+}
+
+@media screen and (max-width: 850px) {
+  .contact .right .container.extrainfo p {
+    max-width: 200px;
+    word-break: break-all;
+  }
+}
+
 /********************* Nosotros ******************/
-.us-header {
+.header {
   width: 100%;
   height: 150px;
   background-image: url(../img/range-hood-types.jpg);
@@ -546,7 +624,7 @@ body {
   position: relative;
 }
 
-.us-header::after {
+.header::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -558,7 +636,7 @@ body {
   top: 0;
 }
 
-.us-header > div {
+.header > div {
   max-width: 1140px;
   margin: auto;
   max-width: 1140px;
@@ -567,14 +645,14 @@ body {
   z-index: 1;
 }
 
-.us-header > div h1 {
+.header > div h1 {
   color: #ffffff;
   font-weight: bold;
   letter-spacing: 2px;
   position: relative;
 }
 
-.us-header > div h1:before {
+.header > div h1:before {
   content: "";
   width: 70px;
   height: 5px;
@@ -586,7 +664,8 @@ body {
 }
 
 .us {
-  width: 61.11111%;
+  width: 88.88889%;
+  max-width: 1200px;
   margin: 70px auto 0 auto;
 }
 
@@ -595,7 +674,8 @@ body {
 }
 
 .who {
-  width: 61.11111%;
+  width: 88.88889%;
+  max-width: 1200px;
   margin: 70px auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -605,8 +685,30 @@ body {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 850px) {
+  .who {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 88.88889%;
+  }
+}
+
 .who .left {
   width: 44.44444%;
+}
+
+@media screen and (max-width: 850px) {
+  .who .left {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .who .right {
+    width: 100%;
+  }
 }
 
 .who h1 {
