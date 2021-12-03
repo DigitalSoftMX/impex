@@ -1,7 +1,8 @@
+@charset "UTF-8";
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.625rem;
-  color: initial;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: #333;
   margin: 0;
   font-weight: 500;
 }
@@ -304,6 +305,57 @@ body {
           justify-content: space-between;
 }
 
+.nav .bottom .container .right .categories-container {
+  position: relative;
+}
+
+.nav .bottom .container .right .categories-container p {
+  cursor: pointer;
+}
+
+.nav .bottom .container .right ul.categories {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 220px;
+  background-color: #ffffff;
+  padding: 25px;
+}
+
+.nav .bottom .container .right ul.categories li {
+  margin-bottom: 5px;
+}
+
+.nav .bottom .container .right ul.categories.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav .bottom .container .right ul.categories .tarjas {
+  position: relative;
+}
+
+.nav .bottom .container .right ul.tarjas-list {
+  position: absolute;
+  left: 195px;
+  top: -7px;
+  background-color: #ffffff;
+  padding: 0;
+  list-style: none;
+  width: 180px;
+  -webkit-box-shadow: 0px 0px 26px -4px rgba(149, 149, 149, 0.75);
+          box-shadow: 0px 0px 26px -4px rgba(149, 149, 149, 0.75);
+  padding: 25px;
+  margin: 0;
+}
+
+.nav .bottom .container .right ul.tarjas-list.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media screen and (max-width: 850px) {
   .nav .bottom .container .right {
     width: 44.44444%;
@@ -333,6 +385,12 @@ body {
   right: 15%;
   top: 50%;
   z-index: 999;
+}
+
+@media screen and (max-width: 1400px) {
+  .side-contact {
+    right: 4%;
+  }
 }
 
 .side-contact .icon {
@@ -378,6 +436,12 @@ body {
 }
 
 /********************* Home ******************/
+.video-container video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
+}
+
 .products {
   max-width: 1140px;
   margin: 50px auto 0 auto;
@@ -646,10 +710,25 @@ body {
 }
 
 .header > div h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.1rem;
   color: #ffffff;
-  font-weight: bold;
-  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
   position: relative;
+}
+
+@media screen and (max-width: 850px) {
+  .header > div h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header > div h1 {
+    font-size: 2.1rem;
+  }
 }
 
 .header > div h1:before {
@@ -669,13 +748,13 @@ body {
   margin: 70px auto 0 auto;
 }
 
-.us .slide {
-  margin: 0 15px;
+.us .slick-slide {
+  margin: 0 10px;
 }
 
 .who {
   width: 88.88889%;
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 70px auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -718,5 +797,61 @@ body {
 
 .who p {
   margin-bottom: 15px;
+}
+
+/********************* Categorías ******************/
+.product-grid {
+  max-width: 1140px;
+  width: 100%;
+  margin: 50px auto 50px auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.product-grid .product-category {
+  width: 100%;
+  height: 250px;
+  justify-self: center;
+  -ms-flex-item-align: end;
+      align-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(149, 149, 149, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(149, 149, 149, 0.75);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.product-grid .product-category img {
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.product-grid .product-category h1 {
+  color: #00355E;
+}
+
+.product-grid .product-category:hover {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(149, 149, 149, 0.75);
+          box-shadow: 0px 0px 25px 0px rgba(149, 149, 149, 0.75);
 }
 /*# sourceMappingURL=app.css.map */

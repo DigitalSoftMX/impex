@@ -55,4 +55,11 @@ $('.burguer').click(function () {
   $('.burguer').toggleClass('active');
 });
 
+$('.productos').click(function () {
+  $('.categories').toggleClass('hide');
+});
+
+$('.tarjas').hover(function () {
+  $('.tarjas-list').toggleClass('hide');
+});
 

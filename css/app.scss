@@ -17,6 +17,9 @@ $md: 850px;
 $sm: 580px;
 $xs: 400px;
 
+
+$boxShadow: 0px 0px 26px -4px rgba(149,149,149,0.75);
+
 //FUNCTIONS
 @function pxtorem($px) {
   @return #{$px/$font-size}rem;
@@ -27,8 +30,8 @@ $xs: 400px;
 }
 
 @mixin h1($color: initial, $scale: 1) {
-  font-family: 'Montserrat', sans-serif;
-  font-size: pxtorem(26 * $scale);
+  font-family: 'Roboto', sans-serif;
+  font-size: pxtorem(24 * $scale);
   color: $color;
   margin: 0;
   font-weight: 500;
@@ -41,7 +44,7 @@ $xs: 400px;
 }
 
 h1 {
-  @include h1();
+  @include h1($gray,1);
 }
 
 @mixin h2($color: initial, $scale: 1) {
@@ -223,7 +226,7 @@ body {
   .bottom{
     background-color: $white;
     padding: 15px;
-    box-shadow: 0px 0px 26px -4px rgba(149,149,149,0.75);
+    box-shadow: $boxShadow;
     .container{
       max-width: $max-width;
       margin: auto;
@@ -236,6 +239,53 @@ body {
         }
       }
       .right{
+        .categories-container{
+          position: relative;
+          p{
+            cursor: pointer;
+          }
+        }
+        ul.categories{
+          list-style: none;
+          margin: 0;
+          position: absolute;
+          left: 0;
+          top: 40px;
+          width: 220px;
+          
+          background-color: $white;
+          padding: 25px;
+          //transition: all .5s ease;
+          li{
+            margin-bottom: 5px;
+          }
+          &.hide{
+            opacity: 0;
+            pointer-events: none;
+            //transition: all .5s ease;
+          }
+          .tarjas{
+            position: relative;
+
+          }
+        }
+        ul.tarjas-list{
+          position: absolute;
+          left: 195px;
+          top: -7px;
+          background-color: $white;
+          padding: 0;
+          list-style: none;
+          width: 180px;
+          box-shadow: $boxShadow;
+          padding: 25px;
+          margin: 0;
+          &.hide{
+            opacity: 0;
+            pointer-events: none;
+            //transition: all .5s ease;
+          }
+        }
         width: col(7);
         @media screen and (max-width: $md) {
           width: col(8);
@@ -261,6 +311,9 @@ body {
   right: 15%;
   top: 50%;
   z-index: 999;
+  @media screen and (max-width: $lap) {
+    right: 4%;
+  }
   .icon{
     &.fb{
       background-color: #3b5998;
@@ -291,7 +344,13 @@ body {
 }
 
 /********************* Home ******************/
-
+.video-container{
+  video {
+    /* override other styles to make responsive */
+    width: 100%    !important;
+    height: auto   !important;
+  }
+}
 
 .products{
   max-width: $min-width;
@@ -481,9 +540,9 @@ body {
     width: 100%;
     z-index: 1;
     h1{
-      color: $white;
-      font-weight: bold;
-      letter-spacing: 2px;
+      @include h1($white,1.4);
+      
+      letter-spacing: 1px;
       position: relative;
       &:before{
         content: "";
@@ -504,17 +563,14 @@ body {
   max-width: $max-width;
   margin: 70px auto 0 auto;
 
-  .slide{
-    margin: 0 15px ;
-  }
-  img{
-    //width: 50px;
+  .slick-slide {
+    margin: 0 10px;
   }
 }
 
 .who{
   width: col(16);
-  max-width: $max-width;
+  max-width: $min-width;
   margin: 70px auto 0 auto;
   display: flex;
   justify-content: space-between;
@@ -539,5 +595,46 @@ body {
   }
   p{
     margin-bottom: 15px;
+  }
+}
+
+/********************* Categorías ******************/
+
+.product-grid{
+  max-width: $min-width;
+  width: col(18);
+  margin: 50px auto 50px auto;
+  //height: 100vh;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 1fr;
+  .product-category{
+    width: 100%;
+    height: 250px;
+    justify-self: center;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 5px 0px rgba(149,149,149,0.75);
+
+    transition: all .5s ease;
+    img{
+      width: 200px;
+      margin-bottom: 15px;
+    }
+    h1{
+      color: $blue;
+    }
+    &:hover{
+      transition: all .5s ease;
+      box-shadow: 0px 0px 25px 0px rgba(149,149,149,0.75);
+
+    }
   }
 }
